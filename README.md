@@ -1,59 +1,87 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Sobre o Projeto
 
-## About Laravel
+Blog desenvolvido com Laravel 12, Tailwind CSS v4 e Laravel Breeze, oferecendo um sistema completo de autenticação e um painel administrativo para gerenciamento de conteúdo.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Funcionalidades principais:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- **Gerenciamento de Posts:** criação, edição, exclusão e listagem de artigos, com suporte a upload de imagens e formatação de texto.
+- **Gerenciamento de Categorias:** criação, edição e exclusão de categorias para organização dos posts.
+- **Autenticação e Perfis:** sistema de registro, login e gerenciamento de perfil do usuário baseado no Laravel Breeze.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+O projeto utiliza conceitos centrais do Laravel, como Migrations, Resource Controllers e Blade Components, resultando em uma aplicação web responsiva e totalmente funcional.
 
-## Learning Laravel
+## Tecnologias Utilizadas
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- **Laravel 12** – framework PHP
+- **Tailwind CSS v4** – framework CSS utilitário
+- **Laravel Breeze** – starter kit de autenticação (versão compatível com Laravel 12)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Guia de Execução Local
 
-## Laravel Sponsors
+Siga os passos abaixo para validar o funcionamento do projeto no seu ambiente de desenvolvimento:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Pré-requisitos
 
-### Premium Partners
+- PHP >= 8.2
+- Composer
+- Node.js e NPM
+- MySQL
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Passo a Passo para Instalação
 
-## Contributing
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/joaomnz23/auth-app.git
+    cd auth-app
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2.  **Instale as dependências do PHP:**
+    ```bash
+    composer install
+    ```
 
-## Code of Conduct
+3.  **Configure o ambiente:**
+    - Crie uma cópia do arquivo de ambiente de exemplo:
+      ```bash
+      cp .env.example .env
+      ```
+    - Gere uma nova chave de criptografia para a aplicação:
+      ```bash
+      php artisan key:generate
+      ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4.  **Configure o banco de dados:**
+    - Crie um banco de dados MySQL localmente (ex: `auth_app`).
+    - Abra o arquivo `.env` e atualize as credenciais:
+      ```env
+      DB_DATABASE=auth_app
+      DB_USERNAME=seu_usuario
+      DB_PASSWORD=sua_senha
+      ```
 
-## Security Vulnerabilities
+5.  **Execute as migrações do banco de dados:**
+    ```bash
+    php artisan migrate
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+6.  **Instale as dependências do Node.js e compile os assets:**
+    ```bash
+    npm install
+    npm run build
+    ```
 
-## License
+7.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    php artisan serve
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+8.  **Acesse a aplicação:**
+    - Abra o navegador e acesse `http://127.0.0.1:8000`.
+    - Registre um novo usuário para acessar o painel administrativo e testar todas as funcionalidades.
+
+
+## Licença
+
+Este projeto é um software de código aberto licenciado sob a [MIT license](https://opensource.org/licenses/MIT).
