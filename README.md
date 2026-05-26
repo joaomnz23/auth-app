@@ -383,9 +383,3 @@ php artisan test
 ## 📄 Licença
 
 Este projeto é um software de código aberto licenciado sob a [MIT License](https://opensource.org/licenses/MIT).
-
----
-
-<div align="center">
-Desenvolvido com ❤️ usando <a href="https://laravel.com">Laravel 12</a>
-</div>
